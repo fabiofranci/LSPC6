@@ -471,7 +471,23 @@ function onDeviceReady() {
 
                             $("#Utenti").removeClass('updating_class');
                             $("#Utenti").addClass('updated_class');
-                            getClientiListFromServer();
+                            //getClientiListFromServer();
+                            if (IDDIPENDENTE>0)   {
+                                $("#menuhome").show();
+                                $("#finestrasincro").hide();
+                                $("#finestralogin").hide();
+                                $(".sincrotable").removeClass("updated_class");
+                                $(".sincrotable").addClass("updating_class");
+                                console.log(msg);
+                            } else {
+                                $("#menuhome").hide();
+                                $("#finestrasincro").hide();
+                                $("#finestralogin").show();
+                                $(".sincrotable").removeClass("updated_class");
+                                $(".sincrotable").addClass("updating_class");
+                                console.log(msg);
+                            }
+
                         }
                     );
                 } else {
@@ -490,12 +506,28 @@ function onDeviceReady() {
                     });
                     $("#Utenti").removeClass('updating_class');
                     $("#Utenti").addClass('updated_class');
-                    getClientiListFromServer();
+                    //getClientiListFromServer();
+                    if (IDDIPENDENTE>0)   {
+                        $("#menuhome").show();
+                        $("#finestrasincro").hide();
+                        $("#finestralogin").hide();
+                        $(".sincrotable").removeClass("updated_class");
+                        $(".sincrotable").addClass("updating_class");
+                        console.log(msg);
+                    } else {
+                        $("#menuhome").hide();
+                        $("#finestrasincro").hide();
+                        $("#finestralogin").show();
+                        $(".sincrotable").removeClass("updated_class");
+                        $(".sincrotable").addClass("updating_class");
+                        console.log(msg);
+                    }
                 }
             }
         );
 
     }
+
     function getClientiListFromServer() {
         var iclienti=0;
         var local_ultimo_aggiornamento=getDateTime();
@@ -630,6 +662,7 @@ function onDeviceReady() {
 
         //setUltimoAggiornamento('getSediClientiListFromServer');
     }
+
     function getTipiServizioListFromServer() {
         console.log("Dentro getTipiServizioListFromServer");
 
@@ -909,7 +942,6 @@ function onDeviceReady() {
             }
         );
     }
-
 
     function setUltimoAggiornamento(msg) {
         db.transaction(
