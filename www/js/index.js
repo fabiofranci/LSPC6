@@ -430,6 +430,7 @@ function onDeviceReady() {
     }
 //per ora lo saltiamo!
     function getUsersListFromServer() {
+        alert("1");
         console.log("Dentro getUsersListFromServer");
         rigaselect='';
         $.getJSON(serviceURL + 'gettableusers.php?ult='+global_ultimo_aggiornamento, function (data) {
@@ -502,6 +503,9 @@ function onDeviceReady() {
         var iclienti=0;
         var local_ultimo_aggiornamento=getDateTime();
 
+        alert("2");
+
+
         //alert("getClientiListFromServer prima del post");
         console.log("getClientiListFromServer prima del post");
         //va messo un please wait e tolto solo alla fine di tutto
@@ -562,6 +566,7 @@ function onDeviceReady() {
     }
 
     function getSediClientiListFromServer() {
+        alert("3");
         console.log("Dentro getSediClientiListFromServer");
         var local_ultimo_aggiornamento=getDateTime();
 
@@ -634,6 +639,7 @@ function onDeviceReady() {
     }
 
     function getTipiServizioListFromServer() {
+        alert("4");
         console.log("Dentro getTipiServizioListFromServer");
 
             $.getJSON(serviceURL + 'gettabletipiservizio.php?ult='+global_ultimo_aggiornamento, function (data) {
