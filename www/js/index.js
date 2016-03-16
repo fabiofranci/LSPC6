@@ -1910,6 +1910,7 @@ function onDeviceReady() {
                         //alert ("ultimoaggiornamento in db: "+global_ultimo_aggiornamento);
                     }
                 }, function() {
+                    alert("Da zero!");
                     console.log("Creo db");
                     db.transaction(creoDb, onDbError, onDbOpenSuccess);
                     sincronizzaDaServer();
