@@ -97,7 +97,7 @@ function onDeviceReady() {
     today = dd+'/'+mm+'/'+yyyy;
     todayMySql = yyyy+'-'+mm+'-'+dd;
 
-    var serviceURL = "http://www.lasaetta.studioweb19.it/admin/services/";
+    var serviceURL = "http://www.lasaetta.studioweb19.it/admin/services2/";
     var clienti_server;
     var sedi_clienti_server;
     var tipi_servizio_server;
