@@ -798,7 +798,7 @@ function onDeviceReady() {
                     }
                     i++;
                 });
-                alert(rigaselect);
+                //alert(rigaselect);
                 console.log(rigaselect);
                 if (rigaselect) {
                     //ora può lanciare la transazione
@@ -1679,7 +1679,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['presenza_target_lepidotteri']) {
             var stringacomando=comando.join(", ");
-            //alert(stringacomando);
+            alert(stringacomando); //DEBUG ATTIVO
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
