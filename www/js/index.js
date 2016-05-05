@@ -1547,7 +1547,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['stato_esca_roditori'] && dataObj['collocato_adescante_roditori']) {
             var stringacomando=comando.join(", ");
-            alert(stringacomando); //DEBUG ATTIVO
+            //alert(stringacomando);
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
@@ -1556,7 +1556,7 @@ function onDeviceReady() {
                     $('#FORMispezioneA1').trigger("reset");
                     AggiornaSuServer();
                     location.href="#singola_visita?id="+VisitaCorrente.codice_visita;
-                    //alert("ispezione "+postazioneCorrente.codice_ispezione+" aggiornata");
+                    alert("ispezione "+postazioneCorrente.codice_ispezione+" aggiornata"); //DEBUG ATTIVO
                 }
             );
         } else {
