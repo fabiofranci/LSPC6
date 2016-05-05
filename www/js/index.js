@@ -430,7 +430,6 @@ function onDeviceReady() {
     }
 //per ora lo saltiamo!
     function getUsersListFromServer() {
-        alert("1");
         console.log("Dentro getUsersListFromServer");
         rigaselect='';
         $.getJSON(serviceURL + 'gettableusers.php?ult='+global_ultimo_aggiornamento, function (data) {
@@ -473,7 +472,6 @@ function onDeviceReady() {
                             $("#Utenti").removeClass('updating_class');
                             $("#Utenti").addClass('updated_class');
                             getClientiListFromServer();
-
                         }
                     );
                 } else {
@@ -498,13 +496,9 @@ function onDeviceReady() {
         );
 
     }
-
     function getClientiListFromServer() {
         var iclienti=0;
         var local_ultimo_aggiornamento=getDateTime();
-
-        alert("2");
-
 
         //alert("getClientiListFromServer prima del post");
         console.log("getClientiListFromServer prima del post");
@@ -566,7 +560,6 @@ function onDeviceReady() {
     }
 
     function getSediClientiListFromServer() {
-        alert("3");
         console.log("Dentro getSediClientiListFromServer");
         var local_ultimo_aggiornamento=getDateTime();
 
@@ -637,9 +630,7 @@ function onDeviceReady() {
 
         //setUltimoAggiornamento('getSediClientiListFromServer');
     }
-
     function getTipiServizioListFromServer() {
-        alert("4");
         console.log("Dentro getTipiServizioListFromServer");
 
             $.getJSON(serviceURL + 'gettabletipiservizio.php?ult='+global_ultimo_aggiornamento, function (data) {
@@ -683,22 +674,7 @@ function onDeviceReady() {
                                 $("#TipiServizio").addClass('updated_class');
                                 //alert("chiamerei getPostazioniListFromServer 1");
                                 //ora chiama quella successiva
-                                //getPostazioniListFromServer();
-                                if (IDDIPENDENTE>0)   {
-                                    $("#menuhome").show();
-                                    $("#finestrasincro").hide();
-                                    $("#finestralogin").hide();
-                                    $(".sincrotable").removeClass("updated_class");
-                                    $(".sincrotable").addClass("updating_class");
-                                    console.log(msg);
-                                } else {
-                                    $("#menuhome").hide();
-                                    $("#finestrasincro").hide();
-                                    $("#finestralogin").show();
-                                    $(".sincrotable").removeClass("updated_class");
-                                    $(".sincrotable").addClass("updating_class");
-                                    console.log(msg);
-                                }
+                                getPostazioniListFromServer();
                             }
                         );
                     } else {
@@ -721,22 +697,7 @@ function onDeviceReady() {
                         $("#TipiServizio").addClass('updated_class');
                         //ora chiama quella successiva
                         //alert("chiamerei getPostazioniListFromServer 2");
-                        //getPostazioniListFromServer();
-                        if (IDDIPENDENTE>0)   {
-                            $("#menuhome").show();
-                            $("#finestrasincro").hide();
-                            $("#finestralogin").hide();
-                            $(".sincrotable").removeClass("updated_class");
-                            $(".sincrotable").addClass("updating_class");
-                            console.log(msg);
-                        } else {
-                            $("#menuhome").hide();
-                            $("#finestrasincro").hide();
-                            $("#finestralogin").show();
-                            $(".sincrotable").removeClass("updated_class");
-                            $(".sincrotable").addClass("updating_class");
-                            console.log(msg);
-                        }
+                        getPostazioniListFromServer();
                     }
                 }
             );
@@ -948,6 +909,7 @@ function onDeviceReady() {
             }
         );
     }
+
 
     function setUltimoAggiornamento(msg) {
         db.transaction(
@@ -1910,7 +1872,6 @@ function onDeviceReady() {
                         //alert ("ultimoaggiornamento in db: "+global_ultimo_aggiornamento);
                     }
                 }, function() {
-                    alert("Da zero!");
                     console.log("Creo db");
                     db.transaction(creoDb, onDbError, onDbOpenSuccess);
                     sincronizzaDaServer();
