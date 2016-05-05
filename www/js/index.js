@@ -1547,7 +1547,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['stato_esca_roditori'] && dataObj['collocato_adescante_roditori']) {
             var stringacomando=comando.join(", ");
-            //alert(stringacomando);
+            alert(stringacomando); //DEBUG ATTIVO
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
@@ -1580,7 +1580,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['stato_esca_roditori'] && dataObj['collocato_adescante_roditori']) {
             var stringacomando=comando.join(", ");
-            //alert(stringacomando);
+            alert(stringacomando); //DEBUG ATTIVO
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
@@ -1613,7 +1613,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['stato_esca_roditori'] && dataObj['collocato_adescante_roditori'] && dataObj['stato_piastra_collante_insetti_striscianti']) {
             var stringacomando=comando.join(", ");
-            //alert(stringacomando);
+            alert(stringacomando); //DEBUG ATTIVO
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
@@ -1646,7 +1646,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['stato_piastra_insetti_volanti']) {
             var stringacomando=comando.join(", ");
-            //alert(stringacomando);
+            alert(stringacomando); //DEBUG ATTIVO
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
@@ -1679,7 +1679,7 @@ function onDeviceReady() {
         //controllo campi obbligatori
         if (dataObj['stato_postazione'] && dataObj['presenza_target_lepidotteri']) {
             var stringacomando=comando.join(", ");
-            alert(stringacomando); //DEBUG ATTIVO
+            //alert(stringacomando);
             db.transaction(
                 function (tx3) { tx3.executeSql("UPDATE LOCAL_ISPEZIONI SET "+stringacomando+",data_ispezione='"+ultimo_aggiornamento+"',ultimo_aggiornamento='"+ultimo_aggiornamento+"' WHERE codice_ispezione=?", [postazioneCorrente.codice_ispezione]); },
                 function () { alert("errore");
